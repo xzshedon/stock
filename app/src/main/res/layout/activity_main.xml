@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/list_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- 股票信息列表 -->
+    <ListView android:id="@android:id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="460dip"
+        android:layout_alignParentTop="true"
+        android:choiceMode="singleChoice"
+        android:orientation="horizontal" />
+
+    <!--位于界面最下方的布局-->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <!--股票代码添加文本框-->
+        <EditText
+            android:id="@+id/stock_symbols"
+            android:gravity="bottom"
+            android:layout_alignParentBottom="true"
+            android:hint="@string/enter_symbols"
+            android:editable="true"
+            android:singleLine="true"
+            android:layout_width="280dip"
+            android:layout_height="wrap_content" />
+        <!--股票添加按钮-->
+        <Button
+            android:id="@+id/add_symbols_button"
+            android:text="@string/add"
+            android:layout_alignTop="@+id/stock_symbols"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <!--如果列表为空时显示界面-->
+    <TextView
+        android:id="@+id/empty"
+        android:text="@string/no_stocks"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+</RelativeLayout>

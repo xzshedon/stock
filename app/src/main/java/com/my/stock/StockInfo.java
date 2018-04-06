@@ -38,6 +38,7 @@ public class StockInfo {
     public String getOpening_price(){
         return opening_price;
     }
+
     //设置股票今日开盘价格
     public void setOpening_price(String opening_price){
         this.opening_price = opening_price;

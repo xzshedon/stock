@@ -2,6 +2,9 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 27
+    // Android API 23中废弃了HttpClient
+    useLibrary 'org.apache.http.legacy'
+
     defaultConfig {
         applicationId "com.my.stock"
         minSdkVersion 24

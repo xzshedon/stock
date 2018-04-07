@@ -32,7 +32,7 @@ public class DataHandler{
     //股票查询网址
     private static final String QUERY_URL = "http://hq.sinajs.cn/list=";
     //股票K线图
-    private static final String QUERY_IMG = "http:image.sinajs.cn/newchart/daily/n/";
+    private static final String QUERY_IMG = "http://image.sinajs.cn/newchart/daily/n/";
     //存储股票代码的文件
     private static final String SYMBOL_FILE_NAME = "symbols.txt";
     private int BUF_SIZE = 16384;
@@ -234,7 +234,7 @@ public class DataHandler{
     //将股票添加到文件中
     private void savePortfolio() {
         //将当前stocks中的值重新写入文件中
-        if (stocks.size()>0){
+        if (stocks.size() >= 0){
             FileOutputStream outStream = null;
             OutputStreamWriter oWriter;
             try{
@@ -243,11 +243,15 @@ public class DataHandler{
                 oWriter = new OutputStreamWriter(outStream);
                 StringBuffer buf = new StringBuffer();
                 int index, count = stocks.size();
-                //构字符串写入文件
-                buf.append(stocks.get(0));
-                for(index=1; index<count; index++){
-                    buf.append(",");
-                    buf.append(stocks.get(index));
+                if (stocks.size() > 0){
+                    //构字符串写入文件
+                    buf.append(stocks.get(0));
+                    for(index=1; index < count; index++){
+                        buf.append(",");
+                        buf.append(stocks.get(index));
+                    }
+                }else{
+                    buf.append("");
                 }
                 String outStr = buf.toString();
                 oWriter.write(outStr,0,outStr.length());

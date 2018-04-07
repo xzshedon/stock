@@ -104,7 +104,7 @@ public class MainActivity extends ListActivity implements View.OnClickListener, 
 
     //生命周期： onCreate->onStart->onResume
     protected void onResume(){
-        super.onResume();;
+        super.onResume();
         if (quoteAdaptor != null){
             //开始更新界面
             quoteAdaptor.startRefresh();
